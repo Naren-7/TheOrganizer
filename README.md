@@ -1,157 +1,167 @@
-# FileOrganizer
-La clase FileOrganizer **permite organizar archivos en una carpeta según su tipo**.
+# 
 
-## Instalación
-No es necesario instalar nada para utilizar esta clase, ya que se basa en la biblioteca estándar de Python.
+# File Organizer
 
-## Uso
-Creación de una instancia
+The `FileOrganizer` class allows you to organize files in a folder according to their type.
+
+## Installation
+
+You do not need to install anything to use this class, as it depends on Python's standard library.
+
+## Usage
+
+### Create an instance
 
 ```python
-
 from file_organizer import FileOrganizer
 
-file_organizer = FileOrganizer()
+organizer = FileOrganizer()
 
 ```
-En la terminal
+
+### Run the script
+
 ```bash
-Python3 TheOrganizer.py ~/ruta
+python3 TheOrganizer.py ~/path
 
 ```
 
-## Configuración de la ruta de origen
-Puedes configurar la ruta de origen utilizando el método `set_dir_path()`:
+### Set the source directory
+
+You can set the source directory using the `set_dir_path()` method:
 
 ```python
-file_organizer.set_dir_path('/ruta/a/tu/directorio')
+organizer.set_dir_path('/directory/path')
 
 ```
 
-Por defecto, la ruta de origen es la ruta actual en la que se encuentra el archivo Python que contiene la clase `FileOrganizer`.
+By default, the source directory is the current directory where the Python file containing the `FileOrganizer` class is located.
 
-Organización de archivos
-Para organizar los archivos en una carpeta según su tipo, llama al método `organize()`:
+### Organize files
+
+To organize files in a folder according to their type, call the `organize()` method:
 
 ```python
-file_organizer.organize()
+organizer.organize()
+
 ```
 
-Este método crea una carpeta para cada tipo de archivo en la carpeta de origen y mueve los archivos correspondientes a la carpeta correspondiente.
+This method creates a folder for each file type in the source folder and moves the corresponding files to the appropriate folder.
 
-## Tipos de archivo
-Por defecto, FileOrganizer organiza los siguientes tipos de archivo:
+### File types
 
-- Documentos: .pdf, .doc, .docx, .txt
-- Imágenes: .jpg, .jpeg, .png, .gif
-- Música: .mp3, .wav
+By default, `FileOrganizer` organizes the following file types:
+
+- Documents: .pdf, .doc, .docx, .txt
+- Images: .jpg, .jpeg, .png, .gif
+- Music: .mp3, .wav
 - Videos: .mp4, .avi, .mov
 
-
-Puedes modificar o añadir tipos de archivo utilizando el diccionario `file_types`:
+You can modify or add file types using the `file_types` dictionary:
 
 ```python
-
-file_organizer.file_types = {
-    'Archivos de texto': ['.txt', '.md'],
-    'Archivos de datos': ['.csv', '.json', '.xml'],
-    'Archivos de código': ['.py', '.html', '.css', '.js']
+organizer.file_types = {
+    'Text files': ['.txt', '.md'],
+    'Data files': ['.csv', '.json', '.xml'],
+    'Code files': ['.py', '.html', '.css', '.js']
 }
 
-
 ```
 
-## Ejemplo completo
+### Full example
+
 ```python
-
-
 from file_organizer import FileOrganizer
 
-# crea una instancia de FileOrganizer
-file_organizer = FileOrganizer()
+# Create an instance of FileOrganizer
+organizer = FileOrganizer()
 
-# organiza los archivos en la ruta actual
-file_organizer.organize()
-
+# Organize files in the current directory
+organizer.organize()
 
 ```
 
-## Agregar al PATH
-Aquí te resumo los pasos para que puedas ejecutar el archivo `TheOrganizer.py` desde cualquier ubicación de manera fácil:
+## Add to PATH
 
-1. Abre una **terminal o línea de comandos.**
+Here is a summary of the steps to easily run the `TheOrganizer.py` file from any location:
 
-2. Ejecuta el siguiente comando en la terminal para verificar la ubicación del archivo FileOrganizer.py:
+1. Open a terminal or command prompt.
+2. Run the following command in the terminal to check the location of the `FileOrganizer.py` file:
 
 ```bash
 pwd
 
 ```
-Este comando te dará la **ruta actual en la que te encuentras**. Asegúrate de que estás en la ruta correcta donde se encuentra el archivo `FileOrganizer.py`.
 
-3. Ahora, copia la ruta del directorio que contiene el archivo `FileOrganizer.py`.
+This command will give you the current path where you are. Make sure you are in the correct path where the `FileOrganizer.py` file is located.
 
-4. Agrega la ruta al `PATH` del sistema operativo ejecutando el siguiente comando en la terminal:
+1. Now, copy the directory path that contains the `FileOrganizer.py` file.
+2. Add the path to the system PATH by running the following command in the terminal:
 
-### En Windows:
+**On Windows:**
+
 ```bash
-setx path "%path%;ruta_al_directorio"
-
+setx path "%path%;directory_path"
 
 ```
 
-### En Linux/MacOS:
+**On Linux/MacOS:**
+
 ```bash
-export PATH=$PATH:ruta_al_directorio
+export PATH=$PATH:directory_path
 
 ```
-Asegúrate de reemplazar `ruta_al_directorio` con la ruta que copiaste anteriormente.
 
-5. Ahora puedes ejecutar el algoritmo desde cualquier ruta escribiendo el siguiente comando en la terminal:
+Make sure to replace `directory_path` with the path you copied earlier.
+
+1. You can now run the algorithm from any location by typing the following command in the terminal:
 
 ```bash
 python FileOrganizer.py
 
 ```
-Asegúrate de reemplazar `ruta_personalizada` con la ruta que deseas usar.
 
+Make sure to replace `custom_path` with the path you want to use.
 
-## Con  alias
+## With Alias
 
-1. Abre el archivo `~/.bashrc` o `~/.zshrc ` en tu editor de texto favorito. Por ejemplo, puedes usar el comando nano:
-```bash
-    nano ~/.bashrc
-    code ~/.bashrc
-    vim ~/.bashrc
-```
-o
+1. Open the `~/.bashrc` or `~/.zshrc` file in your favorite text editor. For example, you can use the nano command:
 
 ```bash
-    nano ~/.zshrc
-    code ~/.zshrc
-    vim ~/.zshrc
+nano ~/.bashrc
+code ~/.bashrc
+vim ~/.bashrc
+
 ```
 
-2. Agrega la siguiente línea al final del archivo para crear un alias llamado organize que ejecuta el script:
+or
 
 ```bash
-    alias organize='python /ruta_file'
+nano ~/.zshrc
+code ~/.zshrc
+vim ~/.zshrc
 
 ```
-3. Guarda y cierra el archivo.
 
-4. Para que los cambios surtan efecto, carga el archivo `~/.bashrc`  o  `~/.zshrc ` con el siguiente comando:
+1. Add the following line at the end of the file to create an alias called `organize` that runs the script:
 
 ```bash
+alias organize='python /file_path'
 
+```
+
+1. Save and close the file.
+2. To make the changes take effect, load the `~/.bashrc` or `~/.zshrc` file with the following command:
+
+```bash
 source ~/.bashrc
-source ~/.zshrc 
+source ~/.zshrc
+
 ```
 
-5. Ahora puedes ejecutar el script desde cualquier ruta utilizando el alias organize. Por ejemplo:
+1. You can now run the script from any location using the `organize` alias. For example:
+
 ```bash
-organize 
+organize
+
 ```
-
-
-
