@@ -6,12 +6,16 @@ import pandas as pd
 class FileOrganizer:
     def __init__(self):
         self.types = {
-            'Documentos': ('.doc', '.docx', '.pdf', '.txt'),
-            'Imagenes': ('.jpg', '.jpeg', '.png', '.gif'),
-            'Musica': ('.mp3', '.wav', '.flac'),
-            'Videos': ('.mp4', '.avi', '.mkv', '.mov'),
-            'CSV': ('.csv'),
-            'Excel': ('.xlsx')
+            'Documentos': ('.doc', '.docx', '.pdf', '.txt', '.rtf', '.txt', '.md', '.tex', '.log'),
+            'Imagenes': ('.jpg', '.jpeg', '.png', '.gif', '.bmp', '.svg'),
+            'Musica': ('.mp3', '.wav', '.flac', '.aac', '.ogg'),
+            'Videos': ('.mp4', '.avi', '.mkv', '.mov', '.flv', '.wmv'),
+            'Archivos de programa': ('.exe', '.dmg', '.pkg', '.deb', '.rpm'),
+            'Archivos comprimidos': ('.zip', '.rar', '.tar', '.gz', '.7z'),
+            'Archivos de datos': ('.csv', '.xls', '.xlsx', '.json', '.xml'),
+            'Archivos de código': ('.py', '.c', '.cpp', '.java', '.js', '.html', '.css'),
+            'Archivos de imagen en disco': ('.iso', '.img', '.dsk', '.bin'),
+            'Archivos de configuración': ('.conf', '.cfg', '.ini', '.yaml', '.yml'),            
         }
         self.dir_path = None
 
