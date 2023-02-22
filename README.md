@@ -111,4 +111,42 @@ python FileOrganizer.py
 Asegúrate de reemplazar `ruta_personalizada` con la ruta que deseas usar.
 
 
+## Con  alias
+
+1. Abre el archivo `~/.bashrc` o `~/.zshrc ` en tu editor de texto favorito. Por ejemplo, puedes usar el comando nano:
+```bash
+    nano ~/.bashrc
+    code ~/.bashrc
+    vim ~/.bashrc
+```
+o
+
+```bash
+    nano ~/.zshrc
+    code ~/.zshrc
+    vim ~/.zshrc
+```
+
+2. Agrega la siguiente línea al final del archivo para crear un alias llamado organize que ejecuta el script:
+
+```bash
+    alias organize='python /ruta_file'
+
+```
+3. Guarda y cierra el archivo.
+
+4. Para que los cambios surtan efecto, carga el archivo `~/.bashrc`  o  `~/.zshrc ` con el siguiente comando:
+
+```bash
+
+source ~/.bashrc
+source ~/.zshrc 
+```
+
+5. Ahora puedes ejecutar el script desde cualquier ruta utilizando el alias organize. Por ejemplo:
+```bash
+organize 
+```
+
+
 
