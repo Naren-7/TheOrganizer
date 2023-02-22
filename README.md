@@ -14,6 +14,11 @@ from file_organizer import FileOrganizer
 file_organizer = FileOrganizer()
 
 ```
+En la terminal
+```bash
+Python3 TheOrganizer.py ~/ruta
+
+```
 
 ## Configuración de la ruta de origen
 Puedes configurar la ruta de origen utilizando el método `set_dir_path()`:
